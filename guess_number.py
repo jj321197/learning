@@ -1,6 +1,11 @@
+#增加範圍決定功能
+print ('猜數字(整數)，範圍由你決定')               
 import random 
-x = random.randint(1, 100)
-print ('猜數字，範圍為1-100的整數\n')
+maximum = input('請輸入最大值: ')
+minimum = input('請輸入最小值: ')
+maximum = int(maximum)
+minimum = int(minimum)
+x = random.randint(minimum, maximum)
 z= 0
 while True:
 	z = z + 1
