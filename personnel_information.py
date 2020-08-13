@@ -1,12 +1,20 @@
-#讀取檔案
+import os           #引入os模組
+
 data = []
-with open('people.csv', 'r',encoding='utf-8') as f:
-	for p in f:
-		if '姓名,年齡' in p :
-			continue
-		name, year = p.strip().split(',')
-		data.append([name, year])
-print(data)
+
+#檢查並讀取檔案
+if os.path.isfile('people.csv'):
+	print('讀取到people.csv檔案')
+	with open('people.csv', 'r',encoding='utf-8') as f:
+		for p in f:
+			if '姓名,年齡' in p:
+				continue
+			name, year = p.strip().split(',')
+			data.append([name, year])
+		print('檔案內資料:', data)
+else:
+	print('未讀取到people.csv檔案')
+
 
 #輸入資料
 while True:
